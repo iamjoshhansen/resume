@@ -3,7 +3,7 @@ $mobile-breakpoint: 7in;
 #root {
   max-width: 9.5in;
   margin: 0 auto;
-  padding: 0.5in;
+  padding: 2rem;
   box-sizing: border-box;
   min-height: 100vh;
   display: grid;
@@ -11,6 +11,10 @@ $mobile-breakpoint: 7in;
   grid-template-rows: min-content 1fr min-content;
   background: #fff;
   font-size: 0.875em;
+
+  @media (min-width: $mobile-breakpoint) {
+    padding: 0.5in;
+  }
 }
 
 @media print {
@@ -130,13 +134,16 @@ h3 {
 .contact {
   font-family: var(--mono-font);
   font-size: 0.875em;
+
   display: flex;
-  flex-direction: column;
   gap: 0.5ch;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5ch 2em;
 
   @media (min-width: $mobile-breakpoint) {
-    text-align: right;
     display: block;
+    text-align: right;
   }
 }
 
