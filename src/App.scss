@@ -1,10 +1,11 @@
+$mobile-breakpoint: 7in;
+
 #root {
   max-width: 9.5in;
   margin: 0 auto;
   padding: 0.5in;
   box-sizing: border-box;
   min-height: 100vh;
-  // max-height: 11.5in;
   display: grid;
   gap: 1rem;
   grid-template-rows: min-content 1fr min-content;
@@ -41,10 +42,15 @@
 
 header {
   display: flex;
-  justify-content: space-between;
-  align-items: start;
-  margin: 0 0 2rem;
-  // background: #00000033;
+
+  flex-direction: column;
+
+  @media (min-width: $mobile-breakpoint) {
+    align-items: start;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 0 2rem;
+  }
 }
 
 a {
@@ -52,13 +58,22 @@ a {
 }
 
 h1 {
-  font-size: 5.55em;
-  line-height: 0.8;
-  margin: 0;
+  text-align: center;
+  font-size: 14vw;
+  line-height: 1;
+  margin: 0 0 1.5rem;
   padding: 0;
   font-family: var(--head-font);
-  white-space: nowrap;
   font-weight: 100;
+
+  @media (min-width: $mobile-breakpoint) {
+    text-align: left;
+    font-size: 5.55em;
+    margin: 0;
+    white-space: nowrap;
+
+    line-height: 0.8;
+  }
 
   span {
     &.last-name {
@@ -74,66 +89,123 @@ h1 {
 h2 {
   font-family: var(--mono-font);
   text-transform: uppercase;
-  font-size: 1.5em;
+  font-size: 2em;
+
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff99;
+  backdrop-filter: blur(3px);
+  padding: 0.5ch 0;
+  z-index: 5;
+  border-bottom: solid 2px #fff;
+
+  @media (min-width: $mobile-breakpoint) {
+    padding: 0;
+    font-size: 1.5em;
+    align-self: flex-start;
+  }
 }
 
 h3 {
   color: #000000cc;
   font-family: var(--mono-font);
+
+  position: sticky;
+  top: 3.5rem;
+  left: 0;
+  right: 0;
+  background: #ffffff99;
+  backdrop-filter: blur(3px);
+  padding: 0.5ch 0;
+  border-bottom: solid 2px #fff;
+
+  @media (min-width: $mobile-breakpoint) {
+    top: 0;
+    padding: 0;
+  }
 }
 
 .contact {
-  text-align: right;
   font-family: var(--mono-font);
   font-size: 0.875em;
+
+  @media (min-width: $mobile-breakpoint) {
+    text-align: right;
+  }
 }
 
 main {
-  display: grid;
-  grid-template-columns: max-content 1fr;
-  gap: 2rem;
-  align-content: start;
-
   section {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  @media (min-width: $mobile-breakpoint) {
     display: grid;
-    grid-column: 1 / -1;
-    // page-break-inside: avoid;
-    grid-template-columns: subgrid;
+    gap: 0 2rem;
+    grid-template-columns: max-content 1fr;
+    align-content: start;
 
-    & > * {
-      grid-column: 2 / -1;
-      page-break-inside: avoid;
-    }
+    section {
+      display: grid;
+      grid-column: 1 / -1;
+      grid-template-columns: subgrid;
 
-    & > :first-child {
-      grid-column: 1 / 1;
+      & > * {
+        grid-column: 2 / -1;
+        page-break-inside: avoid;
+      }
+
+      & > :first-child {
+        grid-column: 1 / 1;
+      }
     }
   }
 }
 
 .mid-aligned-terms {
-  margin: 0 1em;
   padding: 0;
-  display: grid;
-  gap: 0 1ch;
-  grid-template-columns: max-content 1fr;
-  align-items: baseline;
+  margin: 0;
+
+  @media (min-width: $mobile-breakpoint) {
+    margin: 0 1em;
+    display: grid;
+    gap: 0 1ch;
+    grid-template-columns: max-content 1fr;
+    align-items: baseline;
+  }
 
   li {
     list-style: none;
-    display: contents;
-    margin: 0;
-    padding: 0;
+    margin-left: 2rem;
+
+    @media (min-width: $mobile-breakpoint) {
+      display: contents;
+      margin: 0;
+      padding: 0;
+    }
+
+    & + li {
+      margin-top: 0.5em;
+    }
 
     strong {
-      text-align: right;
+      display: block;
       font-weight: 500;
       color: #000000cc;
       font-size: 1em;
+      margin-left: -1rem;
 
-      &::after {
-        content: ':';
-        opacity: 0.5;
+      @media (min-width: $mobile-breakpoint) {
+        display: inline;
+        text-align: right;
+
+        &::after {
+          content: ':';
+          opacity: 0.75;
+        }
       }
     }
   }
@@ -151,7 +223,12 @@ main {
 
   .who {
     grid-area: who;
-    font-size: 1.5em;
+
+    font-size: 1.3em;
+
+    @media (min-width: $mobile-breakpoint) {
+      font-size: 1.5em;
+    }
   }
   .where {
     grid-area: where;

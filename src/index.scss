@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap');
 
+$mobile-breakpoint: 7in;
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -82,4 +84,9 @@ input {
 
 ul {
   margin: 0;
+  padding: 0 0 0 1.25em;
+
+  @media (min-width: $mobile-breakpoint) {
+    padding: 0 0 0 3em;
+  }
 }
