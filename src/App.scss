@@ -1,0 +1,166 @@
+#root {
+  max-width: 9.5in;
+  margin: 0 auto;
+  padding: 0.5in;
+  box-sizing: border-box;
+  min-height: 100vh;
+  // max-height: 11.5in;
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: min-content 1fr min-content;
+  background: #fff;
+  font-size: 0.875em;
+}
+
+@media print {
+  #root {
+    padding: 0;
+    max-width: none;
+    max-height: none;
+    height: none;
+    width: none;
+    box-shadow: none;
+    background: none;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  main {
+    margin-bottom: 3rem;
+  }
+
+  footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin: 0 0 2rem;
+  // background: #00000033;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 5.55em;
+  line-height: 0.8;
+  margin: 0;
+  padding: 0;
+  font-family: var(--head-font);
+  white-space: nowrap;
+  font-weight: 100;
+
+  span {
+    &.last-name {
+      font-weight: 300;
+
+      &::before {
+        content: ' ';
+      }
+    }
+  }
+}
+
+h2 {
+  font-family: var(--mono-font);
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+
+h3 {
+  color: #000000cc;
+  font-family: var(--mono-font);
+}
+
+.contact {
+  text-align: right;
+  font-family: var(--mono-font);
+  font-size: 0.875em;
+}
+
+main {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 2rem;
+  align-content: start;
+
+  section {
+    display: grid;
+    grid-column: 1 / -1;
+    // page-break-inside: avoid;
+    grid-template-columns: subgrid;
+
+    & > * {
+      grid-column: 2 / -1;
+      page-break-inside: avoid;
+    }
+
+    & > :first-child {
+      grid-column: 1 / 1;
+    }
+  }
+}
+
+.mid-aligned-terms {
+  margin: 0 1em;
+  padding: 0;
+  display: grid;
+  gap: 0 1ch;
+  grid-template-columns: max-content 1fr;
+  align-items: baseline;
+
+  li {
+    list-style: none;
+    display: contents;
+    margin: 0;
+    padding: 0;
+
+    strong {
+      text-align: right;
+      font-weight: 500;
+      color: #000000cc;
+      font-size: 1em;
+
+      &::after {
+        content: ':';
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.experience {
+  display: grid;
+  gap: 0 2rem;
+  grid-template-columns: 1fr max-content;
+  grid-template-areas:
+    'who   who'
+    'where when'
+    'what  what';
+  margin-bottom: 2em;
+
+  .who {
+    grid-area: who;
+    font-size: 1.5em;
+  }
+  .where {
+    grid-area: where;
+  }
+  .when {
+    grid-area: when;
+  }
+  .what {
+    grid-area: what;
+    margin-top: 1rem;
+  }
+}

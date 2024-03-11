@@ -1,0 +1,21 @@
+{
+  "name": "resume-ui",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "author": "Josh Hansen <thisisjoshhansen@gmail.com>",
+  "scripts": {
+    "start": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "solid-js": "^1.8.15"
+  },
+  "devDependencies": {
+    "sass": "^1.71.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.4",
+    "vite-plugin-solid": "^2.10.1"
+  }
+}
