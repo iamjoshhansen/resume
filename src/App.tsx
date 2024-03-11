@@ -11,8 +11,8 @@ export default function App() {
           <span class="last-name">Hansen</span>
         </h1>
         <section class="contact">
-          <div>thisisjoshhansen@gmail.com</div>
           <div>720.201.8771</div>
+          <div>thisisjoshhansen@gmail.com</div>
           {/* <div>Erie, CO 80516</div> */}
           <a href="https://www.linkedin.com/in/this-is-josh-hansen/" target="_blank">linkedin.com/in/this-is-josh-hansen</a>
         </section>
