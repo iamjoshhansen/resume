@@ -130,9 +130,13 @@ h3 {
 .contact {
   font-family: var(--mono-font);
   font-size: 0.875em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5ch;
 
   @media (min-width: $mobile-breakpoint) {
     text-align: right;
+    display: block;
   }
 }
 
