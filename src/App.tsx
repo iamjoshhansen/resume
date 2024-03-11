@@ -33,14 +33,39 @@ export default function App() {
           <ul class="two columns">
             <li>JavaScript/HTML/CSS Expertise</li>
             <li>Application Development</li>
-            <li>Continuous Deployment</li>
             <li>Responsive Web Design</li>
             <li>UI Component Library Development</li>
-            <li>Continuous Integration (CI) and Continuous Development (CD)</li>
+            <li>Continuous Integration and <span class="no-break">Continuous Deployment (CD/CD)</span></li>
             <li>Proficient with relational and NoSQL databases</li>
-            <li>Sprint Planning</li>
+            <li>Agile Development</li>
             <li>Accessibility (ARIA attributes, focus intent, etc)</li>
-            <li>Translation (implementing globalization, handling translation files)</li>
+            <li>Handling translation pipeline (implementing globalization, handling translation files)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Tools</h2>
+          <ul class="mid-aligned-terms">
+            <li>
+              <strong>Front-End</strong>
+              Angular, React, SolidJS, Vue.js, jQuery
+            </li>
+            <li>
+              <strong>Back-End</strong>
+              Express, NestJS, GraphQL, Socket.io
+            </li>
+            <li>
+              <strong>Infrastructure</strong>
+              Docker, Kubernetes
+            </li>
+            <li>
+              <strong>Unit Testing</strong>
+              Mocha, Protractor
+            </li>
+            <li>
+              <strong>Browser automation</strong>
+              Puppeteer
+            </li>
           </ul>
         </section>
 
@@ -52,18 +77,18 @@ export default function App() {
             <div class="where">IBM</div>
             <div class="when">Feb 2013 - Present</div>
             <ul class="what">
-              <li>Created the <strong>email generation tool</strong> for all client-facing communication, allowing richly designed email content to be created within minutes.</li>
-              <li>Integrated the email generation tool into IBM's translation process, which allowed for effortless globalization of IBM's outgoing communication.</li>
               <li>Architected and engineered the <strong>IBM global internal home page</strong> which won the Nielsen Norman Group's top ten <a href="https://www.nngroup.com/news/item/2017-intranet-design-awards/" target="_blank">2017 Best Intranet Design Awards</a>.</li>
-              {/* <li>Built the <strong>Adaptive Workplace Foundation</strong>, allowing developers to go from nothing to an extendable, scalable, and customizable intranet framework within 20 minutes, rather than months.</li> */}
               <li>Re-engineered the intranet framework (AWF) for IBM, winning an <strong>Outstanding Technical Achievement Award</strong> which has been extended into use by several IBM clients</li>
+              <li>Created the <strong>email generation tool</strong> for all client-facing communication, allowing richly designed email content to be created within minutes.</li>
+              <li>Invented an <strong>instant search results system</strong>, displaying results from each of the top company categories</li>
+              <li>Integrated the email generation tool into IBM's translation process, which allowed for effortless globalization of IBM's outgoing communication.</li>
+              {/* <li>Built the <strong>Adaptive Workplace Foundation</strong>, allowing developers to go from nothing to an extendable, scalable, and customizable intranet framework within 20 minutes, rather than months.</li> */}
               <li>Replaced antiquated notification system with <strong>real-time, customizable, corporate communications</strong></li>
               <li>Extensive work developing nascent, <strong>reusable UI components</strong>, speeding design and implementation</li>
-              <li>Invented an <strong>instant search results system</strong>, displaying results from each of the top company categories</li>
               {/* <li>Experienced in <strong>Agile leadership</strong></li> */}
               <li>Incorporated <strong>mobile-first methodology</strong> in all IBM work, ensuring a good experience on all devices.</li>
               {/* <li>Collaborated with other developers on code reviews, bug fixes, and feature development.</li> */}
-              <li>Optimized existing code base for better performance and scalability.</li>
+              {/* <li>Optimized existing code base for better performance and scalability.</li> */}
               {/* <li>Developed automated scripts to facilitate deployment of web applications in different environments.</li> */}
               {/* <li>Implemented caching strategies to reduce page loading time.</li> */}
               <li>Ensured compliance with industry standards for accessibility.</li>
@@ -93,31 +118,9 @@ export default function App() {
         </section>
 
         <section>
-          <h2>Tools</h2>
-          <ul class="mid-aligned-terms">
-            <li>
-              <strong>Frameworks / Libraries</strong>
-              Angular, React, SolidJS, Vue.js, jQuery
-            </li>
-            <li>
-              <strong>API Technologies</strong>
-              Express, NestJS, GraphQL, Socket.io
-            </li>
-            <li>
-              <strong>Unit Testing</strong>
-              Mocha, Protractor
-            </li>
-            <li>
-              <strong>Browser automation</strong>
-              Puppeteer
-            </li>
-          </ul>
-        </section>
-
-        <section>
           <h2>Hobbies</h2>
           <ul class="two columns">
-            <li>Love reading sci-fi &amp; fantasy</li>
+            <li>Reading sci-fi &amp; fantasy</li>
             <li>Biking</li>
             <li>Camping</li>
             <li>DIY Smart Home via Raspberry Pi, which is currently running my sprinkler system</li>
