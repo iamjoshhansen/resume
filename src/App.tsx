@@ -125,6 +125,7 @@ export default function App() {
             <li>Camping</li>
             <li>DIY Smart Home via Raspberry Pi, which is currently running my sprinkler system</li>
             <li>Board Games</li>
+            <li>Game development</li>
           </ul>
         </section>
       </main>
