@@ -2,6 +2,41 @@
 import './App.scss'
 
 export default function App() {
+
+  function listItems(md:string) {
+    return <>
+      {
+        md
+          .split('\n')
+          .map(line => line.trim())
+          .filter(line => line.length > 0)
+          .filter(line => line.startsWith('- '))
+          .map(line => line.substring(2).trim())
+          .map((line:string) => {
+
+            const [key,val] = line.split(':',2).map(item => item.trim());
+            if (typeof val === 'undefined') {
+              return key;
+            }
+            return <><strong>{key}:</strong> {val}</>
+          })
+          .map(line => <li>{line}</li>)
+      }
+    </>;
+  }
+
+  function paragraphs(md:string) {
+    return <>
+      {
+        md
+          .split('\n')
+          .map(line => line.trim())
+          .filter(line => line.length > 0)
+          .map(line => <p>{line}</p>)
+      }
+    </>;
+  }
+
   return (
     <>
       {/* <img src={viteLogo} class="logo" alt="Vite logo" /> */}
@@ -21,51 +56,47 @@ export default function App() {
       <main>
         <section>
           <h2>Summary</h2>
-          <p>
-            Offering 15 years of progressive experience in owning web-based projects from concept and design through
-            testing, implementation and client updates. Consistent at producing exceptionally clean, strong and secure
-            code. Successful at satisfying client desires and producing robust, sophisticated applications.
-          </p>
+          {
+            paragraphs(`
+              I am a Full Stack Developer with a strong focus on quality user experience, a deep background in UI development, and recognized for consistent value delivery.
+              With 16 years of experience in web development, I am skilled in creating nearly anything that can be imagined on the web. As a seasoned and pragmatic problem-solver, I have created both applications and the libraries for building them, envisioning and delivering what is needed for success.
+              I have a strong passion for team culture and recognize its crucial role in consistently delivering value. I prioritize user experience across all levels of accessibility, maintainability of code, and cultivating a positive work environment.
+            `)
+          }
         </section>
 
         <section>
           <h2>Skills</h2>
           <ul class="two columns">
-            <li>JavaScript/HTML/CSS Expertise</li>
-            <li>Application Development</li>
-            <li>Responsive Web Design</li>
-            <li>UI Component Library Development</li>
-            <li>Continuous Integration and <span class="no-break">Continuous Deployment (CD/CD)</span></li>
-            <li>Proficient with relational and NoSQL databases</li>
-            <li>Agile Development</li>
-            <li>Accessibility (ARIA attributes, focus intent, etc)</li>
-            <li>Handling translation pipeline (implementing globalization, handling translation files)</li>
+            {
+              listItems(`
+                - Application Development
+                - Creation of a Component Library
+                - Development within an existing Component Library
+                - JavaScript / HTML / CSS Expertise
+                - Solving and implementing responsive design
+                - Continuous Integration and Continuous Deployment (CD/CD)
+                - Proficient with relational and NoSQL databases
+                - Agile Methodologies
+                - Accessibility
+                - Implementation according to international law
+              `)
+            }
           </ul>
         </section>
 
         <section>
           <h2>Tools</h2>
           <ul class="mid-aligned-terms">
-            <li>
-              <strong>Front-End</strong>
-              Angular, React, SolidJS, Vue.js, jQuery
-            </li>
-            <li>
-              <strong>Back-End</strong>
-              Express, NestJS, GraphQL, Socket.io
-            </li>
-            <li>
-              <strong>Infrastructure</strong>
-              Docker, Kubernetes
-            </li>
-            <li>
-              <strong>Unit Testing</strong>
-              Mocha, Protractor
-            </li>
-            <li>
-              <strong>Browser automation</strong>
-              Puppeteer
-            </li>
+            {
+              listItems(`
+                - Front-End: Angular, React, SolidJS, Vue.js, jQuery
+                - Back-End: Express, NestJS, GraphQL, Socket.io
+                - Infrastructure: Docker, Kubernetes
+                - Unit Testing: Mocha, Protractor
+                - Browser automation: Puppeteer
+              `)
+            }
           </ul>
         </section>
 
@@ -82,17 +113,17 @@ export default function App() {
               <li>Created the <strong>email generation tool</strong> for all client-facing communication, allowing richly designed email content to be created within minutes.</li>
               <li>Invented an <strong>instant search results system</strong>, displaying results from each of the top company categories</li>
               <li>Integrated the email generation tool into IBM's translation process, which allowed for effortless globalization of IBM's outgoing communication.</li>
-              {/* <li>Built the <strong>Adaptive Workplace Foundation</strong>, allowing developers to go from nothing to an extendable, scalable, and customizable intranet framework within 20 minutes, rather than months.</li> */}
               <li>Replaced antiquated notification system with <strong>real-time, customizable, corporate communications</strong></li>
               <li>Extensive work developing nascent, <strong>reusable UI components</strong>, speeding design and implementation</li>
-              {/* <li>Experienced in <strong>Agile leadership</strong></li> */}
               <li>Incorporated <strong>mobile-first methodology</strong> in all IBM work, ensuring a good experience on all devices.</li>
+              <li>Ensured compliance with industry standards for accessibility.</li>
+              <li>Analyzed user behavior patterns through analytics tools like Google Analytics and Splunk.</li>
+              {/* <li>Built the <strong>Adaptive Workplace Foundation</strong>, allowing developers to go from nothing to an extendable, scalable, and customizable intranet framework within 20 minutes, rather than months.</li> */}
+              {/* <li>Experienced in <strong>Agile leadership</strong></li> */}
               {/* <li>Collaborated with other developers on code reviews, bug fixes, and feature development.</li> */}
               {/* <li>Optimized existing code base for better performance and scalability.</li> */}
               {/* <li>Developed automated scripts to facilitate deployment of web applications in different environments.</li> */}
               {/* <li>Implemented caching strategies to reduce page loading time.</li> */}
-              <li>Ensured compliance with industry standards for accessibility.</li>
-              <li>Analyzed user behavior patterns through analytics tools like Google Analytics and Splunk.</li>
               {/* <li>Managed both back-end and front-end aspects of development process.</li> */}
               {/* <li>Communicated issues, risks and concerns to management and offered solutions and mitigation strategies.</li> */}
             </ul>

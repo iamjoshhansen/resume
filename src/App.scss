@@ -213,10 +213,10 @@ main {
         display: inline;
         text-align: right;
 
-        &::after {
-          content: ':';
-          opacity: 0.75;
-        }
+        // &::after {
+        //   content: ':';
+        //   opacity: 0.75;
+        // }
       }
     }
   }
