@@ -1,41 +1,74 @@
 // import viteLogo from '/vite.svg'
+import { pipe, pipeWith } from 'pipe-ts';
 import './App.scss'
+import { filter, map } from './pipe-utils';
+import { JSX } from 'solid-js/jsx-runtime';
 
 export default function App() {
 
-  function listItems(md:string) {
-    return <>
-      {
-        md
-          .split('\n')
-          .map(line => line.trim())
-          .filter(line => line.length > 0)
-          .filter(line => line.startsWith('- '))
-          .map(line => line.substring(2).trim())
-          .map((line:string) => {
-
-            const [key,val] = line.split(':',2).map(item => item.trim());
-            if (typeof val === 'undefined') {
-              return key;
-            }
-            return <><strong>{key}:</strong> {val}</>
-          })
-          .map(line => <li>{line}</li>)
-      }
-    </>;
+  function formatKeyValue(line:string) {
+    const [key,val] = line.split(':',2).map(item => item.trim());
+    if (typeof val === 'undefined') {
+      return preventSingleOrphans(key);
+    }
+    return <><strong>{key}:</strong> <span>{preventSingleOrphans(val)}</span></>;
   }
 
-  function paragraphs(md:string) {
-    return <>
-      {
-        md
-          .split('\n')
-          .map(line => line.trim())
-          .filter(line => line.length > 0)
-          .map(line => <p>{line}</p>)
+  function split (separator='\n') {
+    return function* (md:string) {
+      for (const line of md.split(separator)) {
+        yield line;
       }
-    </>;
+    }
   }
+
+  function removeEmpty() {
+    return pipe(
+      filter((item:string) => item.length > 0)
+    );
+  }
+
+  function toLineItemContent() {
+    return pipe(
+      map((item:string) => item.trim()),
+      filter(item => item.startsWith('- ')),
+      map(item => item.substring(2).trim())
+    );
+  }
+
+  function toArray() {
+    return function <T>(arr:Iterable<T>) {
+      return [...arr];
+    }
+  }
+
+  function preventSingleOrphans(content:string) {
+    const items = content.split(' ');
+    const theLastTwo = items.splice(items.length-2,2);
+    return <>{ items.join(' ') } <span class="no-break">{theLastTwo.join(' ')}</span></>;
+  }
+
+  const asListItems = (md:string): JSX.Element[] => pipeWith(
+    md,
+    split(),
+    removeEmpty(),
+
+    toLineItemContent(),
+
+    map(formatKeyValue),
+    map(content => <li>{content}</li>),
+
+    toArray(),
+  )
+
+  const asParagraphs = (md:string): JSX.Element[] => pipeWith(
+    md,
+    split(),
+    removeEmpty(),
+    map(preventSingleOrphans),
+    map(content => <p>{content}</p>),
+    toArray(),
+  );
 
   return (
     <>
@@ -57,7 +90,7 @@ export default function App() {
         <section>
           <h2>Summary</h2>
           {
-            paragraphs(`
+            asParagraphs(`
               I am a Full Stack Developer with a strong focus on quality user experience, a deep background in UI development, and recognized for consistent value delivery.
               With 16 years of experience in web development, I am skilled in creating nearly anything that can be imagined on the web. As a seasoned and pragmatic problem-solver, I have created both applications and the libraries for building them, envisioning and delivering what is needed for success.
               I have a strong passion for team culture and recognize its crucial role in consistently delivering value. I prioritize user experience across all levels of accessibility, maintainability of code, and cultivating a positive work environment.
@@ -68,20 +101,18 @@ export default function App() {
         <section>
           <h2>Skills</h2>
           <ul class="two columns">
-            {
-              listItems(`
-                - Application Development
-                - Creation of a Component Library
-                - Development within an existing Component Library
-                - JavaScript / HTML / CSS Expertise
-                - Solving and implementing responsive design
-                - Continuous Integration and Continuous Deployment (CD/CD)
-                - Proficient with relational and NoSQL databases
-                - Agile Methodologies
-                - Accessibility
-                - Implementation according to international law
-              `)
-            }
+            {asListItems(`
+              - Application Development
+              - Creation of a Component Library
+              - Development within an existing Component Library
+              - JavaScript / HTML / CSS Expertise
+              - Solving and implementing responsive design
+              - Continuous Integration and Continuous Deployment (CD/CD)
+              - Proficient with relational and NoSQL databases
+              - Agile Methodologies
+              - Accessibility
+              - Implementation according to international law
+            `)}
           </ul>
         </section>
 
@@ -89,7 +120,7 @@ export default function App() {
           <h2>Tools</h2>
           <ul class="mid-aligned-terms">
             {
-              listItems(`
+              asListItems(`
                 - Front-End: Angular, React, SolidJS, Vue.js, jQuery
                 - Back-End: Express, NestJS, GraphQL, Socket.io
                 - Infrastructure: Docker, Kubernetes
@@ -134,16 +165,18 @@ export default function App() {
             <div class="where">Alpha Cube, Inc</div>
             <div class="when">Jul 2008 - Feb 2013</div>
             <ul class="what">
-              <li>Created reusable Ul components and implemented them in multiple projects.</li>
-              <li>Wrote the component library for the company for use in rapid prototyping projects.</li>
-              <li>Collaborated with design team to develop wireframes, storyboards, user flows, and site maps.</li>
-              <li>Implemented HTML5, CSS3, JavaScript and jQuery for front end development of web applications.</li>
-              <li>Debugged Ul related issues using browser developer tools such as Chrome DevTools or Firebug.</li>
-              <li>Developed responsive designs that adapts to different screen sizes and devices.</li>
-              <li>Tested cross-browser compatibility across various browsers such as Google Chrome, Firefox, Safari.</li>
-              <li>Worked closely with product managers to understand project scope and deliverables.</li>
-              <li>Developed custom web application interfaces with HTML and CSS to meet client requirements.</li>
-              <li>Converted PSD mockups into pure hand-written HTML and CSS pages.</li>
+              {asListItems(`
+                - Created reusable Ul components and implemented them in multiple projects.
+                - Wrote the component library for the company for use in rapid prototyping projects.
+                - Collaborated with design team to develop wireframes, storyboards, user flows, and site maps.
+                - Implemented HTML5, CSS3, JavaScript and jQuery for front end development of web applications.
+                - Debugged Ul related issues using browser developer tools such as Chrome DevTools or Firebug.
+                - Developed responsive designs that adapts to different screen sizes and devices.
+                - Tested cross-browser compatibility across various browsers such as Google Chrome, Firefox, Safari.
+                - Worked closely with product managers to understand project scope and deliverables.
+                - Developed custom web application interfaces with HTML and CSS to meet client requirements.
+                - Converted PSD mockups into pure hand-written HTML and CSS pages.
+              `)}
             </ul>
           </div>
         </section>
@@ -151,12 +184,14 @@ export default function App() {
         <section>
           <h2>Hobbies</h2>
           <ul class="two columns">
-            <li>Reading sci-fi &amp; fantasy</li>
-            <li>Biking</li>
-            <li>Camping</li>
-            <li>DIY Smart Home via Raspberry Pi, which is currently running my sprinkler system</li>
-            <li>Board Games</li>
-            <li>Game development</li>
+            {asListItems(`
+              - Reading sci-fi & fantasy
+              - Biking
+              - Camping
+              - DIY Smart Home via Raspberry Pi, which is currently running my sprinkler system
+              - Board Games
+              - Game development
+            `)}
           </ul>
         </section>
       </main>
