@@ -96,6 +96,10 @@ ul {
   }
 }
 
+li {
+  page-break-inside: avoid;
+}
+
 .no-break {
   white-space: nowrap;
 }

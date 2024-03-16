@@ -41,6 +41,10 @@ $mobile-breakpoint: 7in;
     left: 0;
     right: 0;
     bottom: 0;
+
+    @media print {
+      position: static;
+    }
   }
 }
 
@@ -128,6 +132,13 @@ h3 {
   @media (min-width: $mobile-breakpoint) {
     top: 0;
     padding: 0;
+    background: none;
+    backdrop-filter: none;
+    border-bottom: none;
+  }
+
+  @media print {
+    position: static;
   }
 }
 
@@ -170,7 +181,7 @@ main {
 
       & > * {
         grid-column: 2 / -1;
-        page-break-inside: avoid;
+        // page-break-inside: avoid;
       }
 
       & > :first-child {
