@@ -24,13 +24,13 @@ export default function App() {
             development, and recognized for consistent value&nbsp;delivery.
           </p>
           <p>
-            With 16 years of experience in web development, I am skilled in creating nearly anything that can be
+            With sixteen years of professional experience in web development, I am skilled in creating nearly anything that can be
             imagined on the web. As a seasoned and pragmatic problem-solver, I have created both applications and the
             libraries for building them, envisioning and delivering what is needed
             for&nbsp;success.
           </p>
           <p>
-            I have a strong passion for team culture and recognize its crucial role in consistently delivering value.
+            I have a strong passion for team culture and collaboration, and recognize its crucial role in consistently delivering value.
             I prioritize user experience across all levels of accessibility, maintainability of code, and cultivating a
             positive work&nbsp;environment.
           </p>
@@ -40,11 +40,11 @@ export default function App() {
           <h2>Skills</h2>
           <ul class="two columns">
             <li>Application Development</li>
-            <li>Creation of a Component&nbsp;Library</li>
+            <li>Creation of Component&nbsp;Libraries</li>
             <li>Development within an&nbsp;existing Component&nbsp;Library</li>
             <li>JavaScript / HTML / CSS Expertise</li>
             <li>Solving and implementing responsive&nbsp;design</li>
-            <li>Continuous Integration and&nbsp;Continuous Deployment&nbsp;(CD/CD)</li>
+            <li>Continuous&nbsp;Integration and Continuous&nbsp;Deployment (CD/CD)</li>
             <li>Proficient with relational and NoSQL&nbsp;databases</li>
             <li>Agile Methodologies</li>
             <li>Accessibility</li>
@@ -87,9 +87,9 @@ export default function App() {
             <div class="when">Feb 2013 - Present</div>
             <ul class="what">
               <li>
-                Architected and engineered the <strong>IBM global internal home page</strong> which won the Nielsen
-                Norman Group's top ten
-                <a href="https://www.nngroup.com/news/item/2017-intranet-design-awards/" target="_blank">
+                Architected and engineered the <strong>IBM global internal home page</strong> winning the Nielsen
+                Norman Group's top ten <a
+                  href="https://www.nngroup.com/news/item/2017-intranet-design-awards/" target="_blank">
                   2017 Best&nbsp;Intranet Design&nbsp;Awards
                 </a>.
               </li>
@@ -116,10 +116,11 @@ export default function App() {
                 Incorporated <strong>mobile-first methodology</strong> in all IBM work, ensuring a good experience on all&nbsp;devices.
               </li>
               <li>
-                Ensured compliance with industry standards for&nbsp;<strong>accessibility</strong>.
+                Ensured compliance with industry and IBM standards for&nbsp;<strong>accessibility</strong>.
               </li>
               <li>
-                Analyzed user behavior patterns through analytics tools like Google&nbsp;Analytics and&nbsp;Splunk.
+                Analyzed user behavior patterns through analytics tools like Google&nbsp;Analytics and Splunk,
+                which led to more direct understanding of what mattered most (or least) to our&nbsp;users.
               </li>
               {/* <li>Built the <strong>Adaptive Workplace Foundation</strong>, allowing developers to go from nothing to an extendable, scalable, and customizable intranet framework within 20 minutes, rather than months.</li> */}
               {/* <li>Experienced in <strong>Agile leadership</strong></li> */}
@@ -138,8 +139,8 @@ export default function App() {
             <div class="when">Jul 2008 - Feb 2013</div>
             <ul class="what">
               <li>Architected and engineered the <strong>component library</strong> for use across company&nbsp;projects.</li>
-              <li>Utilized my library in <strong>rapid prototyping</strong> projects.</li>
-              <li>Developed responsive designs that adapts to different screen sizes and&nbsp;devices.</li>
+              <li>Utilized my library in <strong>rapid prototyping</strong>.</li>
+              <li>Developed responsive designs that adapt to different screen sizes and&nbsp;devices.</li>
               <li>Collaborated with design team to develop wire-frames, storyboards, user flows, and site&nbsp;maps.</li>
               <li>Debugged Ul related issues using browser developer tools such as Chrome DevTools or&nbsp;Firebug.</li>
               {/* <li>Tested cross-browser compatibility across various browsers such as Google Chrome, Firefox, and&nbsp;Safari.</li> */}
