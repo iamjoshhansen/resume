@@ -153,6 +153,10 @@ main {
     margin-bottom: 2rem;
   }
 
+  strong {
+    font-weight: 500;
+  }
+
   @media (min-width: $mobile-breakpoint) {
     display: grid;
     gap: 0 2rem;
