@@ -19,36 +19,38 @@ export default function App() {
       <main>
         <section>
           <h2>Summary</h2>
-          <p>
-            I am a Full Stack Developer with a strong focus on quality user experience, a deep background in UI
-            development, and recognized for consistent value&nbsp;delivery.
-          </p>
-          <p>
-            With sixteen years of professional experience in web development, I am skilled in creating nearly anything that can be
-            imagined on the web. As a seasoned and pragmatic problem-solver, I have created both applications and the
-            libraries for building them, envisioning and delivering what is needed
-            for&nbsp;success.
-          </p>
-          <p>
-            I have a strong passion for team culture and collaboration, and recognize its crucial role in consistently delivering value.
-            I prioritize user experience across all levels of accessibility, maintainability of code, and cultivating a
-            positive work&nbsp;environment.
-          </p>
+          <div>
+            <p>
+              I am a Full Stack Developer with a strong focus on quality user experience, a deep background in UI
+              development, and recognized for consistent value delivery.
+            </p>
+            <p>
+              With sixteen years of professional experience in web development, I am skilled in creating nearly
+              anything that can be imagined on the web. As a seasoned and pragmatic problem-solver, I have created both
+              applications and the libraries for building them, envisioning and delivering what is needed for success.
+            </p>
+            <p>
+              I have a strong passion for team culture and collaboration, and recognize its crucial role in consistently
+              delivering value. Driven by a fervent passion for bringing ideas to life, I excel at fostering innovation
+              to create products that succeed.
+            </p>
+          </div>
         </section>
 
         <section>
           <h2>Skills</h2>
           <ul class="two columns">
-            <li>Application Development</li>
-            <li>Creation of Component&nbsp;Libraries</li>
-            <li>Development within an&nbsp;existing Component&nbsp;Library</li>
+            <li>Responsive Application Development</li>
+            <li>Authoring Component&nbsp;Libraries</li>
+            {/* <li>Development within an&nbsp;existing Component&nbsp;Library</li> */}
+            <li>Thoughtful selection of existing libraries and&nbsp;frameworks.</li>
             <li>JavaScript / HTML / CSS Expertise</li>
-            <li>Solving and implementing responsive&nbsp;design</li>
-            <li>Continuous&nbsp;Integration and Continuous&nbsp;Deployment (CD/CD)</li>
+            {/* <li>Solving and implementing responsive&nbsp;design</li> */}
+            <li>Continuous&nbsp;Integration and Continuous&nbsp;Deployment (CI/CD)</li>
             <li>Proficient with relational and NoSQL&nbsp;databases</li>
-            <li>Agile Methodologies</li>
-            <li>Accessibility</li>
-            <li>Implementation according to international&nbsp;law</li>
+            <li>10+ years of pragmatic Agile Development</li>
+            <li>UI Accessibility</li>
+            {/* <li>Implementation according to international&nbsp;law (GDPR)</li> */}
           </ul>
         </section>
 
@@ -61,7 +63,7 @@ export default function App() {
             </li>
             <li>
               <strong>Back-End:</strong>
-              <span>Express, NestJS, GraphQL,&nbsp;Socket.io</span>
+              <span>Express, NestJS, GraphQL,&nbsp;Socket.io, MongoDB</span>
             </li>
             <li>
               <strong>Infrastructure:</strong>
@@ -72,7 +74,7 @@ export default function App() {
               <span>Mocha, Protractor</span>
             </li>
             <li>
-              <strong>Browser automation:</strong>
+              <strong>Others:</strong>
               <span>Puppeteer</span>
             </li>
           </ul>
@@ -98,13 +100,14 @@ export default function App() {
                 Award</strong> which has been extended into use by several IBM&nbsp;clients.
               </li>
               <li>
-                Created the <strong>email generation tool</strong> for all client-facing communication, which was
-                integrated into the translation process, which resulted in global-ready, richly formatted email
-                content, and reduced developer content delivery time from hours to&nbsp;minutes.
+                Created the <strong>email generation tool</strong> for the global IBM partner platform, which allowed developers to produce content <strong>98% faster</strong> (from ~3 hours to ~2 minutes).
+                This was integrated into the translation process, which resulted in global-ready, richly formatted email content.
               </li>
               <li>
                 Invented an <strong>instant search results system</strong>, displaying results from each of the&nbsp;top
                 company categories, and was an immediate improvement to user&nbsp;experience.
+
+                {/* Can this be made more measurable? */}
               </li>
               <li>
                 Replaced antiquated notification system with <strong>real-time, customizable, corporate&nbsp;communications</strong>.
@@ -118,10 +121,10 @@ export default function App() {
               <li>
                 Ensured compliance with industry and IBM standards for&nbsp;<strong>accessibility</strong>.
               </li>
-              <li>
+              {/* <li>
                 Analyzed user behavior patterns through analytics tools like Google&nbsp;Analytics and Splunk,
                 which led to more direct understanding of what mattered most (or least) to our&nbsp;users.
-              </li>
+              </li> */}
               {/* <li>Built the <strong>Adaptive Workplace Foundation</strong>, allowing developers to go from nothing to an extendable, scalable, and customizable intranet framework within 20 minutes, rather than months.</li> */}
               {/* <li>Experienced in <strong>Agile leadership</strong></li> */}
               {/* <li>Collaborated with other developers on code reviews, bug fixes, and feature development.</li> */}

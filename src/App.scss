@@ -109,6 +109,10 @@ h2 {
   z-index: 5;
   border-bottom: solid 2px #fff;
 
+  @media print {
+    position: static;
+  }
+
   @media (min-width: $mobile-breakpoint) {
     padding: 0;
     font-size: 1.5em;
@@ -139,6 +143,7 @@ h3 {
 
   @media print {
     position: static;
+
   }
 }
 
@@ -165,7 +170,7 @@ main {
   }
 
   strong {
-    font-weight: 500;
+    font-weight: 600;
   }
 
   @media (min-width: $mobile-breakpoint) {
@@ -178,6 +183,7 @@ main {
       display: grid;
       grid-column: 1 / -1;
       grid-template-columns: subgrid;
+      gap: 0 2rem;
 
       & > * {
         grid-column: 2 / -1;
@@ -226,12 +232,7 @@ main {
 
       @media (min-width: $mobile-breakpoint) {
         display: inline;
-        text-align: right;
-
-        // &::after {
-        //   content: ':';
-        //   opacity: 0.75;
-        // }
+        // text-align: right;
       }
     }
   }
@@ -245,7 +246,14 @@ main {
     'who   who'
     'where when'
     'what  what';
-  margin-bottom: 2em;
+
+  &+& {
+    margin-top: 2em;
+
+    @media print {
+      margin-top: 3em; // why?? This "shouldn't" need to be here.
+    }
+  }
 
   .who {
     grid-area: who;
