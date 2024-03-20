@@ -23,15 +23,6 @@ $mobile-breakpoint: 7in;
   }
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -42,6 +33,8 @@ body {
   --mono-font: 'Noto Sans Mono', monospace;
 
   --heading-color: rgb(38, 153, 152);
+  --link-color: #05c;
+  --link-color--hover: #09e;
 }
 
 h1,
@@ -74,6 +67,16 @@ select,
 textarea,
 input {
   font-family: var(--body-font);
+}
+
+a {
+  // font-weight: 500;
+  color: var(--link-color);
+  text-decoration: inherit;
+
+  &:hover {
+    color: var(--link-color--hover);
+  }
 }
 
 @media (min-width: 7in) {
